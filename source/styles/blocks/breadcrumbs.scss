@@ -1,0 +1,42 @@
+.breadcrumbs__list {
+  @include list();
+  margin-block: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.breadcrumbs__item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.breadcrumbs__item:not(:last-child) {
+  &::after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: $color-title;
+  }
+}
+
+.breadcrumbs__link {
+  @include fluid-typography(0.75rem, 0.875rem, 0.81rem, 0.875rem);
+  text-decoration: none;
+  color: $color-text;
+
+  &:hover:not([aria-current="page"]) {
+    text-decoration: underline;
+  }
+
+  &[aria-current="page"] {
+    border-bottom: 1px solid $color-accent;
+  }
+
+  &[aria-current="page"]:hover {
+    cursor: auto;
+  }
+}

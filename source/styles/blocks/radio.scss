@@ -1,0 +1,41 @@
+.radio {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.radio__button {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $color-accent;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  &:checked::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $color-accent;
+  }
+
+  &:hover {
+    border-color: $color-title;
+  }
+
+  &:checked:hover::before {
+    background-color: $color-title;
+  }
+}
+
+.radio__label {
+  @include fluid-typography();
+  font-weight: 700;
+  color: $color-text;
+}

@@ -1,0 +1,16 @@
+@mixin list() {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@mixin margin-tb($val) {
+  margin-top: 0;
+  margin-bottom: $val;
+}
+
+// $min-size: 14рх, $max-size: 16рх, $min-line: 18px, $max-line: 24px
+@mixin fluid-typography($min-size: 0.875rem, $max-size: 1rem, $min-line: 1.125rem, $max-line: 1.75rem) {
+  font-size: clamp($min-size, $min-size + 0.26vw, $max-size);
+  line-height: clamp($min-line, $min-line + 0.78vw, $max-line);
+}

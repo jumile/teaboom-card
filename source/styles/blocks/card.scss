@@ -1,0 +1,93 @@
+.card {
+  background: #FFFFFF;
+  border: 1px solid #E4E4E4;
+  box-shadow: 0 0 50px rgba(163, 163, 163, 0.25);
+  border-radius: 20px;
+  padding: 25px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  @media #{$tablet} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "breadcrumbs breadcrumbs"
+      "title title"
+      "picture description"
+      "picture packing"
+      "picture button";
+    align-items: start;
+    column-gap: 20px;
+  }
+}
+
+.card__breadcrumbs {
+  order: -1;
+
+  @media #{$tablet} {
+    grid-area: breadcrumbs;
+  }
+}
+
+.card__title {
+  @include margin-tb(0);
+  @include fluid-typography(2rem, 2.8rem, 2.625rem, 3.412rem);
+  font-weight: 700;
+  color: $color-title;
+
+  @media #{$tablet} {
+    grid-area: title;
+  }
+}
+
+.card__description {
+  @include margin-tb(0);
+  @include fluid-typography($min-size: 0.875rem, $max-size: 1rem, $min-line: 1.312rem, $max-line: 1.75rem);
+  color: $color-text;
+
+  @media #{$tablet} {
+    grid-area: description;
+    align-self: end;
+  }
+}
+
+.card__packing {
+  width: 100%;
+  max-width: 400px;
+  margin-inline: auto;
+
+  @media #{$tablet} {
+    grid-area: packing;
+    margin-inline: 0;
+  }
+}
+
+.card__picture {
+  width: 100%;
+  margin-inline: auto;
+
+  @media #{$tablet} {
+    grid-area: picture;
+    max-width: 600px;
+  }
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.card__button {
+  width: 100%;
+  max-width: 400px;
+  margin-inline: auto;
+
+  @media #{$tablet} {
+    grid-area: button;
+    margin-inline: 0;
+    align-self: start;
+  }
+}

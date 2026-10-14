@@ -1,0 +1,45 @@
+.button {
+  @include fluid-typography();
+  font-weight: 600;
+  font-family: inherit;
+  text-align: center;
+  color: $color-title;
+  background: $color-accent;
+  border: none;
+  border-radius: 5px;
+  padding: 11px 15px 12px;
+  cursor: pointer;
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  transition-property: background-color, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 21px;
+    height: 19px;
+    flex-shrink: 0;
+    background-color: $color-title;
+    mask-image: url(../../images/icons/stack.svg#cart-icon);
+    transition: background-color 0.3s ease;
+  }
+
+  &:hover {
+    background-color: $color-title;
+    color: $color-accent;
+    transition-property: background-color, color;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+
+    &::before {
+      background-color: $color-accent;
+      transition: background-color 0.5s ease;
+    }
+  }
+}

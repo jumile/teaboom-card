@@ -1,0 +1,12 @@
+$font: "Open Sans", sans-serif;
+
+$color-title: #202020;
+$color-text: #444444;
+$color-accent: #f5d730;
+$color-discount: #ff0000;
+
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1440px;
+
+$tablet: "(min-width: #{$breakpoint-tablet})";
+$desktop: "(min-width: #{$breakpoint-desktop})";

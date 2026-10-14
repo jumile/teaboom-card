@@ -1,0 +1,46 @@
+.packing {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding-block: 20px;
+  padding-inline: 10px 20px;
+}
+
+.packing__list {
+  @include list();
+}
+
+.packing__item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.packing__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.packing__sku {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 500;
+  margin-bottom: auto;
+}
+
+.packing__price {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.packing__price-old {
+  @include fluid-typography(1rem, 1.125rem, 1.125rem, 1.125rem);
+  font-weight: 500;
+}
+
+.packing__price-new {
+  @include fluid-typography(1.25rem, 1.625rem, 1.35rem, 1.375rem);
+  font-weight: 700;
+  color: $color-discount;
+}
